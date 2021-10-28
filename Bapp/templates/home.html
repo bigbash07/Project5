@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+<style>
+
+footer{
+   position:fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #24262b;
+   text-align: left;
+   color: #bbbbbb;
+}
+footer a{ text-decoration:none;
+	  font-size:16px;
+	   text-transform: capitalize;
+		color: #ffffff;
+		font-weight: 300;
+		color:#A6FDF2 ;
+		display:block;
+}
+img {width:40%; position: relative; overflow-y: hidden; height:50%; background-size: contain; }
+h4 {font-size:18px; 
+color: #FE0303  ; 
+text-transform: capitalize; 
+font-weight:500; 
+position:relative;
+ text-decoration: underline;
+  text-decoration-color: #31FFFA  ;
+ }
+h3 {color:red; font-size: 40px;}
+footer a:hover{color: #AEB3B3 ;
+		 padding-left:10px; }
+</style>
+
+<body>
+<center>
+<h1> Welcome to our Blood Donation Camp {{ user.username }} </h1>
+<img src = "{% static 'images/Blood.png'%}">
+<h3> Just Donate Blood
+	<br>
+	
+	It's Safe.
+	It's Simple.
+	And it Saves lives 
+ </h3>
+
+<form method="POST">
+{% csrf_token %}
+
+
+
+
+<footer>
+<ul>
+ <h4> Save Life </h4>
+<li>
+<a href="{% url 'privacy' %}"> Terms & Condtions </a>
+</li>
+ <li>
+<a href="{% url 'contact' %}"> Privacy Policy </a>
+  </li>
+ 
+ <li>
+  <a href="{% url 'partner' %}"> About Us </a>
+</li>
+</ul>
+
+
+</footer>
+
+
+</center>
+
+{% endblock %}

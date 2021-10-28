@@ -1,0 +1,7 @@
+from django import forms
+from .models import Personaldetails
+
+class PersoanlForm(forms.ModelForm):
+	class Meta:
+		models = PersonalDetail
+		fields ='__all__'

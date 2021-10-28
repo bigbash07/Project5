@@ -1,0 +1,6 @@
+<html>
+<head>
+	<title> Partners </title>
+</head>
+<h1> Some random  </h1>
+</html>

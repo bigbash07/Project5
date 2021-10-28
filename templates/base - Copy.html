@@ -1,0 +1,29 @@
+<html>
+<head> 
+	<title> Blood Donation Camp </title>
+	<style>
+		* {font-size:40px; font-family:Calibri; }
+	#nav {background-color:white; }
+	#nav a{color:black; padding:30px; text-decoration:none; }
+	#nav a:hover{background-color:#444;}
+	body {background-color:cyan}
+	</style>
+</head>
+<body>
+<center>
+	<div id ="nav">
+	{% if user.is_authenticated %}
+		<a href="{% url 'user_personal_details' %}"> Personal Details </a>
+		<a href="{% url 'user_logout' %}"> Logout </a>
+	{% else %}
+		<a href="{% url 'home' %}"> Home </a>
+		<a href="{% url 'user_signup' %}"> Sign Up </a>
+		<a href="{% url 'user_login' %}"> Login </a>
+		<a href="{% url 'user_resetpassword' %}"> Reset Password </a>
+		
+	{% endif %}
+	</div>
+	{% block content %} {% endblock %} 
+</center>
+</body>
+</html>	
